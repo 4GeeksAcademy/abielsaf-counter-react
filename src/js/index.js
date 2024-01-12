@@ -6,7 +6,10 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+import Home from "./component/home";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let counter=0;
+setInterval(()=>{
+    counter++;
+    ReactDOM.render(<Home seconds={counter} />, document.querySelector("#app"));
+},1000)
